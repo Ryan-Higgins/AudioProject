@@ -13,6 +13,8 @@ void setup()
   drum = new Drum(50);
   trumpet = new Trumpet(90);
   hiHat = new HiHat(50);
+  bass = new Bass(50);
+  cowBell = new CowBell(15);
   
   stroke(255,255,0);
 }
@@ -22,6 +24,8 @@ Minim minim;
 Drum drum;
 Trumpet trumpet;
 HiHat hiHat;
+Bass bass;
+CowBell cowBell;
 
 //This is Bryan's code that allows multiple key presses
 boolean[] keys = new boolean[1000];
@@ -54,6 +58,16 @@ void keyPressed()
   {
    hiHat.play();
   }
+  
+  if(checkKey('r'))
+  {
+    bass.play();
+  }
+  
+  if(checkKey('t'))
+  {
+    cowBell.play();
+  }
 }
 
 void keyReleased()
@@ -81,10 +95,24 @@ void draw()
     hiHat.isPlaying = !hiHat.isPlaying;
  }
  
+ if(checkKey('r') && checkKey(SHIFT))
+ {
+    bass.isPlaying = !bass.isPlaying; 
+ }
+ 
+ if(checkKey('t') && checkKey(SHIFT))
+ {
+    cowBell.isPlaying = !cowBell.isPlaying; 
+ }
+ 
  trumpet.render();
  trumpet.repeat();
  hiHat.render();
  hiHat.repeat();
  drum.render();
  drum.repeat();
+ bass.render();
+ bass.repeat();
+ cowBell.render();
+ cowBell.repeat();
 }

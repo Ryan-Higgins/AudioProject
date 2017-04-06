@@ -28,8 +28,7 @@ class Drum extends Instrument
   void play()
   {
    drum.rewind();
-   drum.play();
-   
+   drum.play();   
   }
   
   void render()

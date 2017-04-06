@@ -7,4 +7,5 @@ class Instrument
   {
      this.delay = delay; 
   }
+ 
 }
