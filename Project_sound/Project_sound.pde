@@ -5,6 +5,8 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
+
+//This is for merging
 void setup()
 {
   size(512, 512);
