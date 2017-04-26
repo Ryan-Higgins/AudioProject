@@ -1,4 +1,4 @@
-class boxes
+class Boxes
 {
 int boxCount = 20; 
 float boxSpeed = random (2,5);
@@ -9,15 +9,14 @@ int boxSize=20;
 float boxX;
 float boxY;
 
-boxes()
+Boxes()
 {
-
     boxY = height + ( boxSize * 19);
     boxX = random ( boxSize /2 , width - boxSize); 
 }
 
 
-void boxs()
+void boxes()
 {
   //for (int i =0; i < boxX.length; i++)
   //{
