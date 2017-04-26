@@ -23,9 +23,10 @@ void setup()
   halfWidth = width / 2;
 
   //Different Songs
-  ai = minim.loadSample("Electro.mp3", 512);
-  //ai = minim.loadSample("Jazz.mp3", 512);
-  //ai = minim.loadSample("Swing.mp3", 512);
+  ai = minim.loadFile("Electro.mp3", 512);
+  //ai = minim.loadFile("Jazz.mp3", 512);
+  //ai = minim.loadFile("Swing.mp3", 512);
+
 
   //Robyn's Stuff
 
@@ -50,9 +51,10 @@ Trumpet trumpet;
 HiHat hiHat;
 Bass bass;
 CowBell cowBell;
+boolean isPlaying = false;
 
 //Cillian's Stuff
-AudioSample ai; //Allows the play of the sound file
+AudioPlayer ai; //Allows the play of the sound file
 int sampleRate = 44100;
 int resolution = 16;
 float halfHeight;
@@ -116,7 +118,7 @@ void keyPressed()
 
   if (checkKey(' '))
   {
-    ai.trigger();
+    isPlaying = !isPlaying;
   }
 }
 
@@ -209,6 +211,12 @@ void draw()
   {
     cowBell.isPlaying = !cowBell.isPlaying;
   }
+  
+  if (isPlaying)
+    {
+      ai.rewind();
+      ai.play();
+    }
 
   //Ryan's Stuff
   trumpet.render();
