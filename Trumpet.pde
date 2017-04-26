@@ -34,7 +34,7 @@ class Trumpet extends Instrument
   {
    for(int i = 0; i < trumpet.bufferSize(); i++)
    {
-     stroke(255,0,0);
+     stroke(0);
      line(i,height/2,i, height/2 + abs((trumpet.left.get(i) * height/2)));  
    }
   }

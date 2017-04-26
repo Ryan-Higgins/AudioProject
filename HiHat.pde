@@ -22,7 +22,6 @@ class HiHat extends Instrument
         timer = 0;
       }
     }
-    println(isPlaying);
   }
   
   void play()
